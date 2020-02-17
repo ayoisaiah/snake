@@ -3,7 +3,7 @@
 This is a browser-based snake game built with TypeScript. Here's a GIF of the
 game play:
 
-![Snake game](https://rawcdn.githack.com/ayoisaiah/snake/5f78ecd0818ec3182b48b28b8e5dfbd0f2e6ec7d/demo.gif)
+![Snake game](https://rawcdn.githack.com/ayoisaiah/snake/9a161ca180945528af008605b456ac155227f6ec/demo.gif)
 
 ## Build instructions
 
