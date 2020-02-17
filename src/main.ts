@@ -134,7 +134,6 @@ function update() {
   } else {
     snake.body.shift();
   }
-  console.log(head);
 }
 
 function render() {
