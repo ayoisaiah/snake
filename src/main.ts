@@ -20,6 +20,17 @@ type Snake = {
   head: () => Coords;
 };
 
+type Board = {
+  gridSize: number;
+  tilesX: number;
+  tilesY: number;
+};
+
+type Game = {
+  score: number;
+  running: boolean;
+};
+
 let snake: Snake = {
   direction: 'right',
   body: [
@@ -41,20 +52,23 @@ let food: Food = {
   x: 30,
   y: 20,
   move() {
-    this.x = Math.floor(Math.random() * game.tilesX);
-    this.y = Math.floor(Math.random() * game.tilesY);
+    this.x = Math.floor(Math.random() * board.tilesX);
+    this.y = Math.floor(Math.random() * board.tilesY);
   },
 };
 
-const game = {
-  gridSize: 20,
+const game: Game = {
   score: 0,
-  tilesX: 40,
-  tilesY: 30,
   running: false,
 };
 
-function resetGame() {
+const board: Board = {
+  gridSize: 20,
+  tilesX: 40,
+  tilesY: 30,
+};
+
+function reset() {
   snake.direction = 'right';
   snake.body = [
     { x: 10, y: 10 },
@@ -73,7 +87,7 @@ function resetGame() {
 function gameOver() {
   alert(`Game over. Your final score is ${game.score}`);
   clearInterval(interval);
-  resetGame();
+  reset();
 }
 
 function snakeCollision() {
@@ -96,9 +110,9 @@ function borderCollision() {
   const head = snake.head();
   if (
     head.x < 0 ||
-    head.x > game.tilesX - 1 ||
+    head.x > board.tilesX - 1 ||
     head.y < 0 ||
-    head.y > game.tilesY - 1
+    head.y > board.tilesY - 1
   ) {
     return true;
   }
@@ -145,7 +159,7 @@ function render() {
   context.fillRect(0, 0, canvas.width, canvas.height);
 
   context.fillStyle = 'lime';
-  const { gridSize } = game;
+  const { gridSize } = board;
   for (let i = 0; i < snake.body.length; i++) {
     context.fillRect(
       snake.body[i].x * gridSize,
