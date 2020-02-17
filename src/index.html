@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Snake game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <canvas id="canvas" class="canvas" width="800" height="600"></canvas>
+      <div class="sidebar">
+        <div>Score: <span id="score">0</span></div>
+
+        <div>
+          <label for="difficulty">Difficulty: </label>
+          <select id="difficulty" name="difficulty">
+            <option value="5">Easy</option>
+            <option value="10" selected>Normal</option>
+            <option value="25">Hard</option>
+            <option value="35">Extreme</option>
+          </select>
+        </div>
+        <button id="start">Start game</button>
+
+        <div class="instructions">
+          <h4>Instructions:</h4>
+          <ul>
+            <li>Use ← → ↑ ↓ to move the snake around</li>
+            <li>Pick up the food to grow bigger</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="/dist/main.js"></script>
+  </body>
+</html>

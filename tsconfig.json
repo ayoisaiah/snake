@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "strict": true,
+    "target": "esnext",
+    "allowJs": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "noUnusedParameters": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/"]
+}
