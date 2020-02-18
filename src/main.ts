@@ -52,8 +52,22 @@ const food: Food = {
   x: 30,
   y: 20,
   move() {
-    this.x = Math.floor(Math.random() * board.tilesX);
-    this.y = Math.floor(Math.random() * board.tilesY);
+    const x = Math.floor(Math.random() * board.tilesX);
+    const y = Math.floor(Math.random() * board.tilesY);
+
+    // Checks if the food coordinates are in the snake position
+    const isSnake = snake.body.some(
+      (coord: Coords) => x === coord.x && y === coord.y
+    );
+
+    if (isSnake) {
+      // If so generate a new position for the food so that the it won't
+      // appear inside the snake
+      this.move();
+    } else {
+      this.x = x;
+      this.y = y;
+    }
   },
 };
 
