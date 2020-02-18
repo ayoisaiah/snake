@@ -31,7 +31,7 @@ type Game = {
   running: boolean;
 };
 
-let snake: Snake = {
+const snake: Snake = {
   direction: 'right',
   body: [
     { x: 10, y: 10 },
@@ -48,7 +48,7 @@ type Food = Coords & {
   move: () => void;
 };
 
-let food: Food = {
+const food: Food = {
   x: 30,
   y: 20,
   move() {
