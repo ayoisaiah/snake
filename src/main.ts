@@ -160,14 +160,14 @@ function render() {
 
   context.fillStyle = 'lime';
   const { gridSize } = board;
-  for (let i = 0; i < snake.body.length; i++) {
+  snake.body.forEach((coord: Coords) => {
     context.fillRect(
-      snake.body[i].x * gridSize,
-      snake.body[i].y * gridSize,
+      coord.x * gridSize,
+      coord.y * gridSize,
       gridSize - 2,
       gridSize - 2
     );
-  }
+  });
 
   context.fillStyle = 'orange';
   context.fillRect(
